@@ -1,0 +1,82 @@
+<%- include('partials/header') %>
+
+<div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <div>
+        <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">The Cooperation Matrix</h1>
+        <p class="text-slate-600 mt-2">Filter and cross-reference industrial requirements.</p>
+    </div>
+    
+    <div class="flex bg-slate-100 p-1 rounded-lg border border-slate-200 self-start md:self-auto">
+        <a href="?filter=both" class="px-4 py-2 text-sm font-bold rounded-md transition-colors <%= filter === 'both' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-500 hover:text-slate-700' %>">All Matrix</a>
+        <a href="?filter=assets" class="px-4 py-2 text-sm font-bold rounded-md transition-colors <%= filter === 'assets' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-500 hover:text-slate-700' %>">Only Assets</a>
+        <a href="?filter=projects" class="px-4 py-2 text-sm font-bold rounded-md transition-colors <%= filter === 'projects' ? 'bg-white shadow-sm text-slate-900' : 'text-slate-500 hover:text-slate-700' %>">Only Projects</a>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+    
+    <% if (filter === 'both' || filter === 'assets') { %>
+    <div class="space-y-4 <%= filter === 'assets' ? 'lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0' : '' %>">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3 <%= filter === 'assets' ? 'lg:col-span-2' : '' %>">
+            <h2 class="font-bold text-lg text-slate-900 flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span> Available Industrial Backing</h2>
+        </div>
+        <% assets.forEach(asset => { %>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full"><%= asset.type %></span>
+                <h3 class="font-bold text-base text-slate-900 mt-2"><%= asset.detail %></h3>
+                <p class="text-xs text-slate-500 mt-1">Provider: <%= asset.provider.name %></p>
+                <div class="mt-5 border-t border-slate-100 pt-4 flex justify-between">
+                    <% if (sessionUserId) { %>
+                        <% if (userRole === 'investor_provider') { %>
+                            <span class="text-xs font-bold text-slate-400 py-2 px-4 border border-slate-200 rounded-lg bg-slate-50 text-center w-full block cursor-not-allowed">Invalid Target (Same Role)</span>
+                        <% } else { %>
+                            <a href="/dashboard?action=new_deal&target_type=Contribution&target_id=<%= asset._id %>&receiver_id=<%= asset.provider._id %>" class="bg-slate-900 hover:bg-emerald-600 text-white text-xs font-bold py-2 px-4 rounded-lg w-full text-center block transition-colors">Initiate in Workspace</a>
+                        <% } %>
+                    <% } else { %>
+                        <a href="/login" class="bg-slate-100 text-slate-700 text-xs font-bold py-2 px-4 rounded-lg w-full text-center block border border-slate-300 transition-colors hover:bg-slate-200">Log In to Contact</a>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    <% } %>
+
+    <% if (filter === 'both' || filter === 'projects') { %>
+    <div class="space-y-4 <%= filter === 'projects' ? 'lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0' : '' %>">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3 <%= filter === 'projects' ? 'lg:col-span-2' : '' %>">
+            <h2 class="font-bold text-lg text-slate-900 flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-500"></span> Validated Concepts</h2>
+        </div>
+        <% projects.forEach(project => { %>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full">Needs: <%= project.needs %></span>
+                <h3 class="font-bold text-base text-slate-900 mt-2"><%= project.title %></h3>
+                <p class="text-xs text-slate-500 mt-1 mb-3">Lead: <%= project.founder.name %></p>
+                <p class="text-sm text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-100"><%= project.description %></p>
+                <div class="mt-4 border-t border-slate-100 pt-4 flex justify-between">
+                    <% if (sessionUserId) { %>
+                        <% if (userRole === 'entrepreneur_builder') { %>
+                            <span class="text-xs font-bold text-slate-400 py-2 px-4 border border-slate-200 rounded-lg bg-slate-50 text-center w-full block cursor-not-allowed">Invalid Target (Same Role)</span>
+                        <% } else { %>
+                            <a href="/dashboard?action=new_deal&target_type=Project&target_id=<%= project._id %>&receiver_id=<%= project.founder._id %>" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold py-2 px-4 rounded-lg w-full text-center block transition-colors">Offer Backing via Workspace</a>
+                        <% } %>
+                    <% } else { %>
+                        <a href="/login" class="bg-slate-100 text-slate-700 text-xs font-bold py-2 px-4 rounded-lg w-full text-center block border border-slate-300 transition-colors hover:bg-slate-200">Log In to Back Project</a>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    <% } %>
+</div>
+
+<div class="flex justify-center border-t border-slate-200 pt-6 mt-8">
+    <nav class="inline-flex rounded-md shadow-sm">
+        <% for(let i = 1; i <= totalPages; i++) { %>
+            <a href="?filter=<%= filter %>&page=<%= i %>" class="px-4 py-2 border text-sm font-medium <%= currentPage === i ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-500 border-slate-300 hover:bg-slate-50' %>">
+                <%= i %>
+            </a>
+        <% } %>
+    </nav>
+</div>
+
+<%- include('partials/footer') %>
