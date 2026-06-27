@@ -13,10 +13,12 @@ const flash = require('connect-flash');
 const app = express();
 
 // 3. Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/haghdan_project')
+// mongoose.connect('mongodb://127.0.0.1:27017/haghdan_project')
+//     .then(() => console.log('MongoDB Engine Online.'))
+//     .catch(err => console.error('MongoDB Connection Error:', err));
+mongoose.connect('mongodb://haghdan_user:Haghdan_SecurePassword_2026!@127.0.0.1:27017/haghdan_db?authSource=haghdan_db')
     .then(() => console.log('MongoDB Engine Online.'))
     .catch(err => console.error('MongoDB Connection Error:', err));
-
 // ========================================================
 // 4. GLOBAL REQUEST LOGGER (Your diagnostic tool)
 // ========================================================
@@ -348,5 +350,5 @@ app.get('/projects', async (req, res) => {
 // ========================================================
 // 10. SERVER INITIALIZATION
 // ========================================================
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8012;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
