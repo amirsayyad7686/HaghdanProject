@@ -17,7 +17,7 @@ const app = express();
 
 
 // 2. Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/haghdan_project')
+mongoose.connect('mongodb://haghdan_user:Haghdan_SecurePassword_2026!@127.0.0.1:27017/haghdan_db?authSource=haghdan_db')
     .then(() => console.log('MongoDB Engine Online.'))
     .catch(err => console.error('MongoDB Connection Error:', err));
 
