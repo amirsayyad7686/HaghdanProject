@@ -2,44 +2,76 @@
 
 <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
     <div>
-        <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Project Pipeline</h1>
-        <p class="text-slate-600 mt-2">Review emerging startups alongside their specific bottlenecks and facility resource gaps.</p>
+        <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight"><%= __('Project Pipeline') %></h1>
+        <p class="text-slate-600 mt-2"><%= __('Review emerging startups alongside their specific bottlenecks and facility resource gaps.') %></p>
     </div>
     <% if (userRole === 'entrepreneur_builder') { %>
-        <a href="/dashboard" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold py-2.5 px-5 rounded-lg shadow-sm transition-all">+ Draft New Project</a>
+        <a href="/dashboard" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold py-2.5 px-5 rounded-lg shadow-sm transition-all"><%= __('Draft New Project') %></a>
     <% } %>
 </div>
 
 <% if (projects.length === 0) { %>
     <div class="p-12 bg-white border border-slate-200 rounded-3xl text-center shadow-sm">
-        <h3 class="text-lg font-bold text-slate-900">No Projects Live</h3>
-        <p class="text-sm text-slate-500 mt-1">The pipeline is currently awaiting new entrepreneurial submissions.</p>
+        <h3 class="text-lg font-bold text-slate-900"><%= __('No Projects Live') %></h3>
+        <p class="text-sm text-slate-500 mt-1"><%= __('Pipeline Awaiting') %></p>
     </div>
 <% } else { %>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <% projects.forEach(project => { %>
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between hover:shadow-md hover:border-blue-300 transition-all">
+            <div class="bg-white rounded-2xl border <%= project.status === 'Fully Backed' ? 'border-emerald-300 shadow-md' : 'border-slate-200 shadow-sm hover:border-blue-300' %> p-6 flex flex-col justify-between">
                 <div>
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-[10px] font-bold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-md uppercase tracking-wider">
-                            ID: <%= project._id.toString().slice(-6) %>
+                            <%= __('ID') %>: <%= project._id.toString().slice(-6) %>
                         </span>
-                        <span class="text-xs font-semibold text-slate-500">By <%= project.founder.name %></span>
+                        <span class="text-xs font-semibold text-slate-500"><%= __('By') %> <%= project.founder.name %></span>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2"><%= project.title %></h3>
-                    <p class="text-sm text-slate-600 line-clamp-3 mb-4"><%= project.description %></p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2"><%= project.title %></h3>
+                    <p class="text-sm text-slate-600 line-clamp-2 mb-4"><%= project.description %></p>
                 </div>
                 
-                <div class="mt-2 pt-4 border-t border-slate-100">
-                    <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Resource Constraints & Needs:</h4>
-                    <p class="text-sm text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200 font-medium italic">
-                        "<%= project.needs %>"
-                    </p>
-                    
-                    <a href="/cooperate?filter=projects" class="w-full mt-5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold py-3 px-4 rounded-xl transition-colors text-center inline-block shadow-sm">
-                        View in Matrix to Back
-                    </a>
-                </div>
+                <% if (project.status === 'Fully Backed') { %>
+                    <div class="mt-2 pt-4 border-t border-slate-100 bg-emerald-50 -mx-6 -mb-6 p-6 rounded-b-2xl">
+                        <div class="flex justify-between items-end mb-4">
+                            <span class="text-xs font-bold text-emerald-800 uppercase tracking-widest"><%= __('Fully Backed & Executing') %></span>
+                        </div>
+                        
+                        <details class="group">
+                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none bg-white border border-emerald-200 p-3 rounded-xl shadow-sm text-emerald-700 text-sm hover:bg-emerald-100 transition-colors">
+                                <span><%= __('View Execution Story') %></span>
+                                <span class="transition group-open:rotate-180">
+                                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                </span>
+                            </summary>
+                            
+                            <div class="text-slate-600 mt-6 px-2 space-y-8 animate-fade-in-down">
+                                <% if (project.milestones.length === 0) { %>
+                                    <p class="text-xs text-slate-500 italic text-center"><%= __('The story of this project is currently being written...') %></p>
+                                <% } else { %>
+                                    <% project.milestones.forEach(step => { %>
+                                        <div class="relative pl-6 rtl:pl-0 rtl:pr-6 border-l-2 border-emerald-300 rtl:border-l-0 rtl:border-r-2">
+                                            <span class="absolute -left-[9px] rtl:-left-auto rtl:-right-[9px] top-0 w-4 h-4 rounded-full border-2 border-emerald-50 bg-emerald-500"></span>
+                                            <h5 class="text-sm font-black text-emerald-900 mb-1 uppercase tracking-wider"><%= __('Step') %> <%= step.stepNumber %></h5>
+                                            <p class="text-sm text-slate-700 mb-4 leading-relaxed"><%= step.description %></p>
+                                            
+                                            <% if (step.image) { %>
+                                                <img src="<%= step.image %>" alt="Step <%= step.stepNumber %>" class="w-full max-h-64 object-cover rounded-xl shadow-md border border-slate-200">
+                                            <% } %>
+                                        </div>
+                                    <% }) %>
+                                <% } %>
+                            </div>
+                        </details>
+                    </div>
+                <% } else { %>
+                    <div class="mt-2 pt-4 border-t border-slate-100">
+                        <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2"><%= __('Resource Constraints & Needs') %></h4>
+                        <p class="text-sm text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200 font-medium italic">"<%= project.needs %>"</p>
+                        <a href="/cooperate?filter=projects" class="w-full mt-5 bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold py-3 px-4 rounded-xl transition-colors text-center inline-block">
+                            <%= __('View in Matrix to Back') %>
+                        </a>
+                    </div>
+                <% } %>
             </div>
         <% }) %>
     </div>

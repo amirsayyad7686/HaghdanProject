@@ -1,8 +1,45 @@
 </main>
-    <footer class="bg-white border-t border-gray-200 mt-12 py-6">
-        <div class="max-w-7xl mx-auto text-center text-sm text-gray-500">
-            &copy; 2026 Transparent Entrepreneurship Hub. Built for impact.
+
+<footer class="bg-slate-900 text-slate-300 py-12 mt-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 tracking-tight"><%= __('Matrix Hub.') %></span>
+                <p class="mt-4 text-sm text-slate-400 max-w-sm leading-relaxed">
+                    <%= __('footer_about') %>
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs"><%= __('Quick Links') %></h4>
+                <ul class="space-y-2 text-sm font-medium">
+                    <li><a href="/" class="hover:text-emerald-400 transition-colors"><%= __('Home') %></a></li>
+                    <li><a href="/contributions" class="hover:text-emerald-400 transition-colors"><%= __('Live Assets') %></a></li>
+                    <li><a href="/projects" class="hover:text-emerald-400 transition-colors"><%= __('Project Pipeline') %></a></li>
+                    <li><a href="/cooperate" class="hover:text-emerald-400 transition-colors"><%= __('Matrix') %></a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs"><%= __('Connect') %></h4>
+                <ul class="space-y-2 text-sm font-medium">
+                    <% if (sessionUserId) { %>
+                        <li><a href="/dashboard" class="hover:text-emerald-400 transition-colors"><%= __('Workspace') %></a></li>
+                        <li><a href="/logout" class="hover:text-red-400 transition-colors"><%= __('Terminate') %></a></li>
+                    <% } else { %>
+                        <li><a href="/login" class="hover:text-emerald-400 transition-colors"><%= __('Log In') %></a></li>
+                        <li><a href="/register" class="hover:text-emerald-400 transition-colors"><%= __('Register') %></a></li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
-    </footer>
+        
+        <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 font-medium">
+            <p>&copy; 2026 <%= __('Matrix Hub.') %> <%= __('All rights reserved.') %></p>
+            <p class="mt-2 md:mt-0"><%= __('Built for impact.') %></p>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>

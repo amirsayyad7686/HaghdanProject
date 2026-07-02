@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="<%= lang %>" dir="<%= lang === 'fa' ? 'rtl' : 'ltr' %>" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>HaghdanProject</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Persian Font overrides for better typography */
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+        html[dir="rtl"] { font-family: 'Vazirmatn', sans-serif; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
     
@@ -14,23 +19,28 @@
                 
                 <div class="flex items-center gap-8">
                     <a href="/" class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 tracking-tight hover:opacity-80 transition-opacity">
-                        Matrix Hub.
+                        <%= __('Matrix Hub.') %>
                     </a>
-                    <div class="hidden md:flex space-x-1">
-                        <a href="/" class="text-slate-600 hover:text-emerald-600 hover:bg-slate-50 px-4 py-2 rounded-lg font-medium text-sm transition-all">Home</a>
-                        <a href="/contributions" class="text-slate-600 hover:text-emerald-600 hover:bg-slate-50 px-4 py-2 rounded-lg font-medium text-sm transition-all">Live Assets</a>
-                        <a href="/projects" class="text-slate-600 hover:text-emerald-600 hover:bg-slate-50 px-4 py-2 rounded-lg font-medium text-sm transition-all">Project Pipeline</a>
-                        <a href="/cooperate" class="text-slate-600 hover:text-emerald-600 hover:bg-slate-50 px-4 py-2 rounded-lg font-medium text-sm transition-all">Matrix</a>
+                    <div class="hidden md:flex space-x-1 rtl:space-x-reverse">
+                        <a href="/" class="text-slate-600 hover:text-emerald-600 hover:bg-slate-50 px-4 py-2 rounded-lg font-medium text-sm transition-all"><%= __('Home') %></a>
+                        <a href="/contributions" class="text-slate-600 hover:text-emerald-600 hover:bg-slate-50 px-4 py-2 rounded-lg font-medium text-sm transition-all"><%= __('Live Assets') %></a>
+                        <a href="/projects" class="text-slate-600 hover:text-emerald-600 hover:bg-slate-50 px-4 py-2 rounded-lg font-medium text-sm transition-all"><%= __('Project Pipeline') %></a>
+                        <a href="/cooperate" class="text-slate-600 hover:text-emerald-600 hover:bg-slate-50 px-4 py-2 rounded-lg font-medium text-sm transition-all"><%= __('Matrix') %></a>
                     </div>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-3">
+                <div class="hidden md:flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="mr-4 pr-4 border-r border-slate-200 rtl:border-r-0 rtl:border-l rtl:mr-0 rtl:ml-4 rtl:pr-0 rtl:pl-4">
+                        <a href="/lang/en" class="<%= lang === 'en' ? 'text-emerald-600 font-bold' : 'text-slate-400 hover:text-slate-600' %> text-xs mr-2">EN</a>
+                        <a href="/lang/fa" class="<%= lang === 'fa' ? 'text-emerald-600 font-bold' : 'text-slate-400 hover:text-slate-600' %> text-xs">FA</a>
+                    </div>
+
                     <% if (sessionUserId) { %>
-                        <a href="/dashboard" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-sm transition-all">Workspace</a>
-                        <a href="/logout" class="text-slate-500 hover:text-red-600 px-3 py-2 font-medium text-sm transition-colors">Terminate</a>
+                        <a href="/dashboard" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-sm transition-all"><%= __('Workspace') %></a>
+                        <a href="/logout" class="text-slate-500 hover:text-red-600 px-3 py-2 font-medium text-sm transition-colors"><%= __('Terminate') %></a>
                     <% } else { %>
-                        <a href="/login" class="text-slate-600 hover:text-emerald-600 px-4 py-2 font-medium text-sm transition-colors">Log In</a>
-                        <a href="/register" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-sm hover:shadow transition-all">Register</a>
+                        <a href="/login" class="text-slate-600 hover:text-emerald-600 px-4 py-2 font-medium text-sm transition-colors"><%= __('Log In') %></a>
+                        <a href="/register" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-sm hover:shadow transition-all"><%= __('Register') %></a>
                     <% } %>
                 </div>
 
@@ -44,19 +54,25 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200 absolute w-full shadow-lg z-40">
             <div class="px-4 pt-2 pb-6 flex flex-col space-y-2">
-                <a href="/" class="block px-3 py-3 text-slate-700 hover:bg-slate-50 hover:text-emerald-600 rounded-md font-bold text-base">Home</a>
-                <a href="/contributions" class="block px-3 py-3 text-slate-700 hover:bg-slate-50 hover:text-emerald-600 rounded-md font-bold text-base">Live Assets</a>
-                <a href="/projects" class="block px-3 py-3 text-slate-700 hover:bg-slate-50 hover:text-emerald-600 rounded-md font-bold text-base">Project Pipeline</a>
-                <a href="/cooperate" class="block px-3 py-3 text-slate-700 hover:bg-slate-50 hover:text-emerald-600 rounded-md font-bold text-base">The Matrix</a>
+                <div class="flex justify-center gap-4 py-3 bg-slate-50 rounded-lg mb-2">
+                    <a href="/lang/en" class="<%= lang === 'en' ? 'text-emerald-600 font-bold' : 'text-slate-500' %> text-sm">English</a>
+                    <span class="text-slate-300">|</span>
+                    <a href="/lang/fa" class="<%= lang === 'fa' ? 'text-emerald-600 font-bold' : 'text-slate-500' %> text-sm">فارسی</a>
+                </div>
+
+                <a href="/" class="block px-3 py-3 text-slate-700 hover:bg-slate-50 hover:text-emerald-600 rounded-md font-bold text-base"><%= __('Home') %></a>
+                <a href="/contributions" class="block px-3 py-3 text-slate-700 hover:bg-slate-50 hover:text-emerald-600 rounded-md font-bold text-base"><%= __('Live Assets') %></a>
+                <a href="/projects" class="block px-3 py-3 text-slate-700 hover:bg-slate-50 hover:text-emerald-600 rounded-md font-bold text-base"><%= __('Project Pipeline') %></a>
+                <a href="/cooperate" class="block px-3 py-3 text-slate-700 hover:bg-slate-50 hover:text-emerald-600 rounded-md font-bold text-base"><%= __('Matrix') %></a>
                 
                 <hr class="my-3 border-slate-100">
                 
                 <% if (sessionUserId) { %>
-                    <a href="/dashboard" class="block w-full px-3 py-3 bg-slate-900 text-white rounded-lg font-bold text-center">Workspace Command</a>
-                    <a href="/logout" class="block w-full px-3 py-3 text-red-600 hover:bg-red-50 rounded-lg font-bold text-center mt-2">Terminate Session</a>
+                    <a href="/dashboard" class="block w-full px-3 py-3 bg-slate-900 text-white rounded-lg font-bold text-center"><%= __('Workspace') %></a>
+                    <a href="/logout" class="block w-full px-3 py-3 text-red-600 hover:bg-red-50 rounded-lg font-bold text-center mt-2"><%= __('Terminate') %></a>
                 <% } else { %>
-                    <a href="/login" class="block w-full px-3 py-3 text-slate-700 border border-slate-300 rounded-lg font-bold text-center">Log In</a>
-                    <a href="/register" class="block w-full px-3 py-3 bg-emerald-600 text-white rounded-lg font-bold text-center mt-2">Register</a>
+                    <a href="/login" class="block w-full px-3 py-3 text-slate-700 border border-slate-300 rounded-lg font-bold text-center"><%= __('Log In') %></a>
+                    <a href="/register" class="block w-full px-3 py-3 bg-emerald-600 text-white rounded-lg font-bold text-center mt-2"><%= __('Register') %></a>
                 <% } %>
             </div>
         </div>

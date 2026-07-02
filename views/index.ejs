@@ -1,4 +1,3 @@
-
 <%- include('partials/header') %>
 
 <div class="relative w-full max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-2xl mb-20 bg-slate-900 h-[600px] group">
@@ -6,100 +5,199 @@
     <div id="slider-container" class="flex h-full w-full transition-transform duration-700 ease-in-out">
         
         <div class="min-w-full h-full relative flex items-center px-6 sm:px-12 md:px-24">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
             <div class="relative z-10 max-w-3xl">
                 <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 mb-6 backdrop-blur-sm">
-                    The Syndicate is Live
+                    <%= __('Participation & Creativity') %>
                 </span>
                 <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                    Sovereign Resources.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Uncompromised Execution.</span>
+                    <%= __('Human Centric.') %><br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400"><%= __('Philanthropy & Empathy.') %></span>
                 </h1>
-                <p class="text-base sm:text-lg text-slate-300 max-w-xl mb-10 pr-4">
-                    We systematically route dormant capital, facility infrastructure, and heavy machinery directly into the hands of high-efficiency operators and technical builders.
+                <p class="text-base sm:text-lg text-slate-300 max-w-xl mb-10 pr-4 rtl:pl-4 rtl:pr-0">
+                    <%= __('slider_desc_1') %>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/register" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-8 rounded-xl transition-all shadow-lg text-center">Deploy Assets</a>
-                    <a href="/cooperate" class="bg-slate-800/80 hover:bg-slate-700 backdrop-blur-md text-white border border-slate-600 font-bold py-3.5 px-8 rounded-xl transition-all text-center">Enter Matrix</a>
+                    <a href="/register" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-8 rounded-xl transition-all shadow-lg text-center"><%= __('Join the Syndicate') %></a>
                 </div>
             </div>
         </div>
 
         <div class="min-w-full h-full relative flex items-center px-6 sm:px-12 md:px-24">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
             <div class="relative z-10 max-w-3xl">
                 <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-blue-500/20 text-blue-400 border border-blue-500/30 mb-6 backdrop-blur-sm">
-                    Strategic Matchmaking
+                    <%= __('True Needs vs Virtual Needs') %>
                 </span>
                 <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                    Sorting Capability.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Fulfilling Facilities.</span>
+                    <%= __('Clean Water & Air.') %><br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400"><%= __('Preserving Life.') %></span>
                 </h1>
-                <p class="text-base sm:text-lg text-slate-300 max-w-xl mb-10 pr-4">
-                    The goal is that with this website we can sort people who have abilities but few facilities with people who have facilities.
+                <p class="text-base sm:text-lg text-slate-300 max-w-xl mb-10 pr-4 rtl:pl-4 rtl:pr-0">
+                    <%= __('slider_desc_2') %>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/projects" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 px-8 rounded-xl transition-all shadow-lg text-center">View Pipelines</a>
+                    <a href="/projects" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 px-8 rounded-xl transition-all shadow-lg text-center"><%= __('View Pipelines') %></a>
                 </div>
             </div>
         </div>
 
         <div class="min-w-full h-full relative flex items-center px-6 sm:px-12 md:px-24">
             <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900"></div>
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
             <div class="relative z-10 max-w-3xl">
                 <span class="inline-flex items-center px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-amber-500/20 text-amber-400 border border-amber-500/30 mb-6 backdrop-blur-sm">
-                    Industrialist Core
+                    <%= __('The Round Table') %>
                 </span>
                 <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
-                    We Are Not A Charity.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">We Are Builders.</span>
+                    <%= __('Replacing the Pyramid.') %><br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400"><%= __('Stewardship over Ownership.') %></span>
                 </h1>
-                <p class="text-base sm:text-lg text-slate-300 max-w-xl mb-10 pr-4">
-                    This is an industrialist and entrepreneur ecosystem. We forge binding contracts and transparent joint ventures that yield actual market value.
+                <p class="text-base sm:text-lg text-slate-300 max-w-xl mb-10 pr-4 rtl:pl-4 rtl:pr-0">
+                    <%= __('slider_desc_3') %>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/register" class="bg-slate-100 hover:bg-white text-slate-900 font-bold py-3.5 px-8 rounded-xl transition-all shadow-lg text-center">Join the Syndicate</a>
+                    <a href="/cooperate" class="bg-slate-100 hover:bg-white text-slate-900 font-bold py-3.5 px-8 rounded-xl transition-all shadow-lg text-center"><%= __('Enter Matrix') %></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <button id="prevBtn" class="hidden sm:block absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    <button id="prevBtn" class="hidden sm:block absolute left-4 rtl:left-auto rtl:right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer z-20">
+        <svg class="w-6 h-6 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
     </button>
-    <button id="nextBtn" class="hidden sm:block absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    <button id="nextBtn" class="hidden sm:block absolute right-4 rtl:right-auto rtl:left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer z-20">
+        <svg class="w-6 h-6 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
     </button>
     
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+    <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-3 rtl:space-x-reverse z-20">
         <button class="dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors cursor-pointer" data-index="0"></button>
         <button class="dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors cursor-pointer" data-index="1"></button>
         <button class="dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors cursor-pointer" data-index="2"></button>
     </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 px-4 sm:px-6">
-    <div class="space-y-6">
-        <h2 class="text-sm font-black text-emerald-600 uppercase tracking-widest">Operational Protocol</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Bridging the Gap Between Ambition and Infrastructure</h3>
-        <p class="text-slate-600 leading-relaxed text-lg">
-            Our job is to construct a transparent ledger where two distinct ecosystems collide. On one side, we have raw, unyielding entrepreneurial talent hindered by a lack of physical and financial leverage. [cite_start]On the other, dormant assets—from empty manufacturing lines to unallocated capital—waiting for purpose[cite: 2, 3].
-        </p>
-        <p class="text-slate-600 leading-relaxed text-lg">
-            [cite_start]We are not a charity; we are industrialists and entrepreneurs[cite: 20]. [cite_start]We provide a secure, auditable workspace where facility owners and technical leads can communicate, negotiate, and forge joint ventures[cite: 3].
-        </p>
+
+<div class="mb-24 px-4 sm:px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight"><%= __('Watch Our Vision') %></h2>
+        <p class="text-slate-600 mt-3 text-lg"><%= __('video_subtitle') %></p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-2">The Providers</h4>
-            <p class="text-sm text-slate-500">Injecting financial capital, heavy equipment, office space, or technical expertise into the public ledger.</p>
+    
+    <div class="relative w-full overflow-hidden rounded-3xl shadow-xl pt-[56.25%] bg-slate-900 border border-slate-200 group">
+        
+        <video 
+            class="absolute inset-0 w-full h-full object-cover" 
+            controls 
+            preload="metadata"
+            poster="/images/video-thumbnail.jpg" 
+        >
+            <source src="/videos/create_a_video_by_reading_thes.mp4" type="video/mp4">
+            
+            <%= __('Your browser does not support the video tag.') %>
+        </video>
+
+    </div>
+</div>
+<div class="mb-24 px-4 sm:px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight"><%= __('The Cooperation Tree') %></h2>
+        <p class="text-slate-600 mt-3 text-lg"><%= __('A visual representation of our core philosophy and organic growth.') %></p>
+    </div>
+    
+    <div class="md:hidden flex justify-center items-center gap-2 mb-4 text-emerald-600 font-bold text-xs animate-bounce">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+        <span><%= __('Swipe to explore or tap to zoom') %></span>
+    </div>
+    
+    <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-2 sm:p-6 overflow-x-auto">
+        <div class="min-w-[900px] md:min-w-full flex justify-center">
+            <% if (lang === 'fa') { %>
+                <img src="/images/tree-fa.png" alt="درخت همکاری" class="w-full max-w-5xl h-auto rounded-2xl cursor-pointer hover:opacity-80 transition-opacity" onclick="openLightbox(this.src)">
+            <% } else { %>
+                <img src="/images/tree-en.png" alt="The Cooperation Tree" class="w-full max-w-5xl h-auto rounded-2xl cursor-pointer hover:opacity-80 transition-opacity" onclick="openLightbox(this.src)">
+            <% } %>
         </div>
-        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm mt-0 sm:mt-12">
-            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-2">The Builders</h4>
-            <p class="text-sm text-slate-500">Presenting thoroughly vetted ideas alongside the exact facility and capital bottlenecks preventing their launch.</p>
+    </div>
+</div>
+
+<div id="image-lightbox" class="fixed inset-0 z-[100] bg-slate-900/95 backdrop-blur-sm hidden flex-col opacity-0 transition-opacity duration-300" dir="ltr">
+    
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white bg-slate-800 hover:bg-red-500 rounded-full p-3 transition-colors cursor-pointer z-50 shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    
+    <div class="w-full h-full overflow-auto overscroll-contain" onclick="closeLightbox()">
+        <div class="flex items-center justify-center min-h-full w-max min-w-full p-4 pt-24 pb-12">
+            
+            <img id="lightbox-img" src="" class="max-w-none w-[1100px] md:max-w-full md:w-auto h-auto rounded-xl shadow-2xl cursor-default" onclick="event.stopPropagation()">
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    function openLightbox(src) {
+        const lightbox = document.getElementById('image-lightbox');
+        const img = document.getElementById('lightbox-img');
+        img.src = src;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        
+        // Small delay to allow CSS fade-in animation
+        setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+        document.body.style.overflow = 'hidden'; // Locks background scrolling
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('image-lightbox');
+        lightbox.classList.add('opacity-0');
+        
+        setTimeout(() => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Restores background scrolling
+        }, 300);
+    }
+</script>
+<div class="mb-24 px-4 sm:px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-sm font-black text-emerald-600 uppercase tracking-widest"><%= __('Our Core Manifesto') %></h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2"><%= __('Bringing the greatest good to the greatest number of people') %></h3>
+        <p class="text-slate-600 mt-4 text-lg"><%= __('manifesto_subtitle') %></p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 font-bold">1</div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2"><%= __('Synergy & Empathy') %></h4>
+            <p class="text-sm text-slate-600"><%= __('goal_1') %></p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4 font-bold">2</div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2"><%= __('Stewardship') %></h4>
+            <p class="text-sm text-slate-600"><%= __('goal_2') %></p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br from-white to-amber-50">
+            <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4 font-bold">3</div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2"><%= __('The Round Table') %></h4>
+            <p class="text-sm text-slate-600"><%= __('goal_3') %></p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow lg:col-span-2 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+            <div class="w-10 h-10 bg-white/20 text-white rounded-xl flex items-center justify-center mb-4 font-bold">4</div>
+            <h4 class="text-lg font-bold mb-2"><%= __('True Needs Priority') %></h4>
+            <p class="text-sm text-slate-300"><%= __('goal_4') %></p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-4 font-bold">5</div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2"><%= __('Transparent Fund') %></h4>
+            <p class="text-sm text-slate-600"><%= __('goal_5') %></p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center mb-4 font-bold">6</div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2"><%= __('Collective Wisdom') %></h4>
+            <p class="text-sm text-slate-600"><%= __('goal_6') %></p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow lg:col-span-2">
+            <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 font-bold">7</div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2"><%= __('Money Cannot Buy True Needs') %></h4>
+            <p class="text-sm text-slate-600"><%= __('goal_7') %></p>
         </div>
     </div>
 </div>
@@ -109,63 +207,63 @@
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
 
     <div class="text-center max-w-2xl mx-auto mb-16 relative z-10">
-        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">The Ecosystem Lifecycle</h2>
-        <p class="text-slate-500 mt-3 text-lg">From isolated resources to executed industrial contracts.</p>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight"><%= __('The Ecosystem Lifecycle') %></h2>
+        <p class="text-slate-500 mt-3 text-lg"><%= __('From isolated resources to executed industrial contracts.') %></p>
     </div>
 
     <div class="relative max-w-3xl mx-auto z-10">
-        <div class="absolute left-[23px] sm:left-1/2 top-0 bottom-0 w-1 bg-slate-200 sm:-translate-x-1/2"></div>
+        <div class="absolute left-[23px] sm:left-1/2 top-0 bottom-0 w-1 bg-slate-200 sm:-translate-x-1/2 rtl:left-auto rtl:right-[23px] sm:rtl:right-1/2 sm:rtl:translate-x-1/2"></div>
 
         <div class="relative flex items-center justify-between w-full mb-16 flex-col sm:flex-row">
             <div class="hidden sm:block w-5/12"></div>
-            <div class="absolute left-0 sm:left-1/2 w-12 h-12 rounded-full bg-slate-900 border-4 border-slate-50 flex items-center justify-center sm:-translate-x-1/2 shadow-md z-10">
+            <div class="absolute left-0 sm:left-1/2 rtl:left-auto rtl:right-0 sm:rtl:right-1/2 w-12 h-12 rounded-full bg-slate-900 border-4 border-slate-50 flex items-center justify-center sm:-translate-x-1/2 sm:rtl:translate-x-1/2 shadow-md z-10">
                 <span class="text-white font-bold text-sm">01</span>
             </div>
-            <div class="w-full sm:w-5/12 pl-16 sm:pl-0 sm:pr-12 text-left sm:text-right">
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Workspace Registration</h3>
+            <div class="w-full sm:w-5/12 pl-16 sm:pl-0 sm:pr-12 rtl:pl-0 rtl:pr-16 sm:rtl:pr-0 sm:rtl:pl-12 text-left sm:text-right rtl:text-right sm:rtl:text-left">
+                <h3 class="text-xl font-bold text-slate-900 mb-2"><%= __('Workspace Registration') %></h3>
                 <p class="text-sm text-slate-600 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm inline-block w-full">
-                    Users identify their primary role (Provider vs. Builder) and gain access to their secure operational command center.
+                    <%= __('Users identify their primary role (Provider vs. Builder) and gain access to their secure operational command center.') %>
                 </p>
             </div>
         </div>
 
         <div class="relative flex items-center justify-between w-full mb-16 flex-col sm:flex-row-reverse">
             <div class="hidden sm:block w-5/12"></div>
-            <div class="absolute left-0 sm:left-1/2 w-12 h-12 rounded-full bg-emerald-600 border-4 border-slate-50 flex items-center justify-center sm:-translate-x-1/2 shadow-md z-10">
+            <div class="absolute left-0 sm:left-1/2 rtl:left-auto rtl:right-0 sm:rtl:right-1/2 w-12 h-12 rounded-full bg-emerald-600 border-4 border-slate-50 flex items-center justify-center sm:-translate-x-1/2 sm:rtl:translate-x-1/2 shadow-md z-10">
                 <span class="text-white font-bold text-sm">02</span>
             </div>
-            <div class="w-full sm:w-5/12 pl-16 sm:pl-0 sm:pl-12 text-left">
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Resource Underwriting</h3>
+            <div class="w-full sm:w-5/12 pl-16 sm:pl-0 sm:pl-12 rtl:pl-0 rtl:pr-16 sm:rtl:pr-0 sm:rtl:pr-12 text-left rtl:text-right">
+                <h3 class="text-xl font-bold text-slate-900 mb-2"><%= __('Resource Underwriting') %></h3>
                 <ul class="text-sm text-slate-600 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-2 w-full">
-                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">•</span> <strong>Capital Ledgers:</strong> Liquid funds are registered openly.</li>
-                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">•</span> <strong>Facility Assets:</strong> Real estate and machinery are logged.</li>
-                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">•</span> <strong>Project Demands:</strong> Exact execution constraints are mapped.</li>
+                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">•</span> <%= __('Capital Ledgers: Liquid funds are registered openly.') %></li>
+                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">•</span> <%= __('Facility Assets: Real estate and machinery are logged.') %></li>
+                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">•</span> <%= __('Project Demands: Exact execution constraints are mapped.') %></li>
                 </ul>
             </div>
         </div>
 
         <div class="relative flex items-center justify-between w-full mb-16 flex-col sm:flex-row">
             <div class="hidden sm:block w-5/12"></div>
-            <div class="absolute left-0 sm:left-1/2 w-12 h-12 rounded-full bg-blue-600 border-4 border-slate-50 flex items-center justify-center sm:-translate-x-1/2 shadow-md z-10">
+            <div class="absolute left-0 sm:left-1/2 rtl:left-auto rtl:right-0 sm:rtl:right-1/2 w-12 h-12 rounded-full bg-blue-600 border-4 border-slate-50 flex items-center justify-center sm:-translate-x-1/2 sm:rtl:translate-x-1/2 shadow-md z-10">
                 <span class="text-white font-bold text-sm">03</span>
             </div>
-            <div class="w-full sm:w-5/12 pl-16 sm:pl-0 sm:pr-12 text-left sm:text-right">
-                <h3 class="text-xl font-bold text-slate-900 mb-2">The Cooperation Matrix</h3>
+            <div class="w-full sm:w-5/12 pl-16 sm:pl-0 sm:pr-12 rtl:pl-0 rtl:pr-16 sm:rtl:pr-0 sm:rtl:pl-12 text-left sm:text-right rtl:text-right sm:rtl:text-left">
+                <h3 class="text-xl font-bold text-slate-900 mb-2"><%= __('The Cooperation Matrix') %></h3>
                 <p class="text-sm text-slate-600 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm inline-block w-full">
-                    A live matchmaking environment where both parties cross-reference capabilities and initiate binding syndication requests directly to the counterparty's inbox.
+                    <%= __('A live matchmaking environment where both parties cross-reference capabilities and initiate binding syndication requests directly to the counterparty\'s inbox.') %>
                 </p>
             </div>
         </div>
 
         <div class="relative flex items-center justify-between w-full flex-col sm:flex-row-reverse">
             <div class="hidden sm:block w-5/12"></div>
-            <div class="absolute left-0 sm:left-1/2 w-12 h-12 rounded-full bg-indigo-600 border-4 border-slate-50 flex items-center justify-center sm:-translate-x-1/2 shadow-md z-10 shadow-indigo-500/50">
+            <div class="absolute left-0 sm:left-1/2 rtl:left-auto rtl:right-0 sm:rtl:right-1/2 w-12 h-12 rounded-full bg-indigo-600 border-4 border-slate-50 flex items-center justify-center sm:-translate-x-1/2 sm:rtl:translate-x-1/2 shadow-md z-10 shadow-indigo-500/50">
                 <span class="text-white font-bold text-sm">04</span>
             </div>
-            <div class="w-full sm:w-5/12 pl-16 sm:pl-0 sm:pl-12 text-left">
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Contract Execution</h3>
+            <div class="w-full sm:w-5/12 pl-16 sm:pl-0 sm:pl-12 rtl:pl-0 rtl:pr-16 sm:rtl:pr-0 sm:rtl:pr-12 text-left rtl:text-right">
+                <h3 class="text-xl font-bold text-slate-900 mb-2"><%= __('Contract Execution') %></h3>
                 <p class="text-sm text-slate-600 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm inline-block w-full">
-                    Once a deal is accepted in the dashboard, direct communication lines open in the Contract Vault, bypassing the bottleneck and initiating physical execution.
+                    <%= __('Once a deal is accepted in the dashboard, direct communication lines open in the Contract Vault, bypassing the bottleneck and initiating physical execution.') %>
                 </p>
             </div>
         </div>
@@ -186,10 +284,11 @@
         let slideInterval;
 
         const updateSlider = () => {
-            // Move the container to show the correct slide
-            sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+            const sign = isRTL ? 1 : -1;
             
-            // Update the active state of the dots
+            sliderContainer.style.transform = `translateX(${sign * currentIndex * 100}%)`;
+            
             dots.forEach((dot, index) => {
                 if(index === currentIndex) {
                     dot.classList.remove('bg-white/50');
@@ -212,7 +311,7 @@
         };
 
         const startAutoPlay = () => {
-            slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+            slideInterval = setInterval(nextSlide, 7000); 
         };
 
         const resetAutoPlay = () => {
@@ -220,18 +319,9 @@
             startAutoPlay();
         };
 
-        // Event Listeners for Controls
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetAutoPlay();
-        });
+        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
+        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
 
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetAutoPlay();
-        });
-
-        // Event Listeners for Dots
         dots.forEach(dot => {
             dot.addEventListener('click', (e) => {
                 currentIndex = parseInt(e.target.getAttribute('data-index'));
@@ -240,9 +330,7 @@
             });
         });
 
-        // Initialize
         updateSlider();
         startAutoPlay();
     });
 </script>
-
