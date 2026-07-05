@@ -269,7 +269,171 @@
         </div>
     </div>
 </div>
+<div class="mb-24 px-4 sm:px-6 max-w-4xl mx-auto">
+    <div class="bg-white rounded-[40px] shadow-xl border border-slate-200 p-8 sm:p-16 overflow-hidden relative group">
+        
+        <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
+        <div class="text-center mb-12 relative z-10">
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight"><%= __('The Inner Matrix') %></h2>
+            <p class="text-slate-600 mt-3 text-lg max-w-2xl mx-auto"><%= __('Peace, integrity, and choice begin from within. Map your current state of being to see where your foundation thrives and where it needs nourishment.') %></p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+            
+            <div class="relative w-full aspect-square max-w-sm mx-auto">
+                <svg viewBox="-20 -20 140 140" class="w-full h-full overflow-visible">
+                    
+                    <circle cx="50" cy="50" r="50" fill="none" stroke="#f1f5f9" stroke-width="6"/>
+
+                    <line x1="50" y1="0" x2="50" y2="100" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4,4"/>
+                    <line x1="0" y1="50" x2="100" y2="50" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+                    <text x="50" y="-14" text-anchor="middle" class="text-[5px] fill-slate-700 font-bold uppercase tracking-widest"><%= __('Emotional') %></text>
+                    <text x="114" y="52" text-anchor="start" class="text-[5px] fill-slate-700 font-bold uppercase tracking-widest"><%= __('Social') %></text>
+                    <text x="50" y="117" text-anchor="middle" class="text-[5px] fill-slate-700 font-bold uppercase tracking-widest"><%= __('Economic') %></text>
+                    <text x="-14" y="52" text-anchor="end" class="text-[5px] fill-slate-700 font-bold uppercase tracking-widest"><%= __('Spiritual') %></text>
+
+                    <path id="arc-top" d="M 14.6447 14.6447 A 50 50 0 0 1 85.3553 14.6447" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" class="transition-all duration-700 ease-out" />
+                    <path id="arc-right" d="M 85.3553 14.6447 A 50 50 0 0 1 85.3553 85.3553" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" class="transition-all duration-700 ease-out" />
+                    <path id="arc-bottom" d="M 85.3553 85.3553 A 50 50 0 0 1 14.6447 85.3553" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" class="transition-all duration-700 ease-out" />
+                    <path id="arc-left" d="M 14.6447 85.3553 A 50 50 0 0 1 14.6447 14.6447" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" class="transition-all duration-700 ease-out" />
+                    
+                    <circle id="core-glow" cx="50" cy="50" r="6" fill="#10b981" class="transition-all duration-700 ease-out" />
+                </svg>
+            </div>
+
+            <div class="space-y-6 bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-bold text-slate-700"><%= __('Emotional Life') %></label>
+                        <span id="val-emotional" class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">50%</span>
+                    </div>
+                    <input type="range" id="slider-emotional" min="0" max="100" value="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-bold text-slate-700"><%= __('Social Life') %></label>
+                        <span id="val-social" class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">50%</span>
+                    </div>
+                    <input type="range" id="slider-social" min="0" max="100" value="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-bold text-slate-700"><%= __('Economic Life') %></label>
+                        <span id="val-economic" class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">50%</span>
+                    </div>
+                    <input type="range" id="slider-economic" min="0" max="100" value="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-bold text-slate-700"><%= __('Spiritual Life') %></label>
+                        <span id="val-spiritual" class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">50%</span>
+                    </div>
+                    <input type="range" id="slider-spiritual" min="0" max="100" value="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                </div>
+
+      </div> </div> <div class="mt-16 text-center relative z-10 border-t border-slate-200 pt-10">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            </div>
+            <p class="text-slate-600 text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
+                <%= __('If you have not been able to draw a complete circle, it means that you, like the majority of society, need to nurture yourself. We are here to help you with empathy and honesty. We look forward to your presence in the therapy group.') %>
+            </p>
+            <a href="/group-therapy" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-10 rounded-xl transition-all shadow-lg hover:shadow-emerald-500/30">
+                <%= __('Join Group Therapy') %>
+            </a>
+            <a href="/education" class="inline-block mt-4 sm:mt-0 sm:ml-4 rtl:sm:ml-0 rtl:sm:mr-4 text-slate-500 hover:text-emerald-600 font-bold py-3.5 px-6 transition-colors">
+                <%= __('Learn More About Our Philosophy') %>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // The exact mathematical length of a 90-degree arc on a radius of 50
+        const QUADRANT_LENGTH = 78.5398;
+
+        const arcs = {
+            top: document.getElementById('arc-top'),
+            right: document.getElementById('arc-right'),
+            bottom: document.getElementById('arc-bottom'),
+            left: document.getElementById('arc-left')
+        };
+        const core = document.getElementById('core-glow');
+
+        const sliders = {
+            top: document.getElementById('slider-emotional'),
+            right: document.getElementById('slider-social'),
+            bottom: document.getElementById('slider-economic'),
+            left: document.getElementById('slider-spiritual')
+        };
+
+        const displays = {
+            top: document.getElementById('val-emotional'),
+            right: document.getElementById('val-social'),
+            bottom: document.getElementById('val-economic'),
+            left: document.getElementById('val-spiritual')
+        };
+
+        const updateShape = () => {
+            const vals = {
+                top: parseInt(sliders.top.value),
+                right: parseInt(sliders.right.value),
+                bottom: parseInt(sliders.bottom.value),
+                left: parseInt(sliders.left.value)
+            };
+
+            displays.top.innerText = vals.top + '%';
+            displays.right.innerText = vals.right + '%';
+            displays.bottom.innerText = vals.bottom + '%';
+            displays.left.innerText = vals.left + '%';
+
+            // Update each arc flawlessly from the center outward
+            Object.keys(arcs).forEach(key => {
+                const val = vals[key];
+                
+                // Calculate how much of the quadrant should be filled
+                const visibleLength = (val / 100) * QUADRANT_LENGTH;
+                
+                // To grow from the center, we offset it backwards by exactly half the remaining empty space
+                const offset = -((QUADRANT_LENGTH - visibleLength) / 2);
+                
+                // Apply the dash array (visible length, then total length gap)
+                arcs[key].style.strokeDasharray = `${visibleLength} ${QUADRANT_LENGTH}`;
+                arcs[key].style.strokeDashoffset = offset;
+            });
+
+            // Calculate Brightness and Glow
+            const averageScore = (vals.top + vals.right + vals.bottom + vals.left) / 4;
+            const opacity = 0.3 + ((averageScore / 100) * 0.7);
+            const glowRadius = (averageScore / 100) * 15;
+
+            const filterValue = `drop-shadow(0px 0px ${glowRadius}px rgba(16, 185, 129, ${opacity}))`;
+            
+            Object.values(arcs).forEach(arc => {
+                arc.style.strokeOpacity = opacity;
+                arc.style.filter = filterValue;
+            });
+
+            core.style.fillOpacity = opacity;
+            core.style.filter = filterValue;
+        };
+
+        Object.values(sliders).forEach(slider => {
+            slider.addEventListener('input', updateShape);
+        });
+
+        updateShape();
+    });
+</script>
 <%- include('partials/footer') %>
 
 <script>

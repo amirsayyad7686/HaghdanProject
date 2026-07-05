@@ -113,8 +113,17 @@ router.get('/projects', async (req, res) => {
 
 
 
+// Group Therapy Page
+router.get('/group-therapy', (req, res) => {
+    res.render('groupTherapy', { title: "Group Therapy | Matrix Hub" });
+});
 
-// ONE-PAGE ADMIN PANEL (Static Route)
+// Education & Philosophy Page
+router.get('/education', (req, res) => {
+    res.render('education', { title: "Education | Matrix Hub" });
+});
+
+
 // ONE-PAGE ADMIN PANEL (Static Route)
 router.get('/admin', async (req, res) => {
     try {
