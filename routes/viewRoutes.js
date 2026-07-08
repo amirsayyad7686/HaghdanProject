@@ -124,6 +124,17 @@ router.get('/education', (req, res) => {
 });
 
 
+
+
+// The 3D Interactive Journey (Tree of Life)
+router.get('/journey', (req, res) => {
+    res.render('journey', { title: "The Matrix Journey | Step 1" });
+});
+
+
+
+
+
 // ONE-PAGE ADMIN PANEL (Static Route)
 router.get('/admin', async (req, res) => {
     try {
